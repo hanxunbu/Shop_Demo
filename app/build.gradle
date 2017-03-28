@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+    //use legacy for android 6.0
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.gaojia.shop_demo"
         minSdkVersion 19
@@ -41,4 +43,9 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.1.1'
     // 下拉刷新和上拉加载的控件
     compile 'in.srain.cube:ptr-load-more:1.0.2'
+
+    //环信
+    compile 'com.google.android.gms:play-services-gcm:9.4.0'
+    compile 'com.hyphenate:hyphenate-sdk:3.3.0'
+
 }

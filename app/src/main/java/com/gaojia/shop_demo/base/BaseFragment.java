@@ -9,18 +9,5 @@ import android.support.v4.app.Fragment;
  */
 
 public class BaseFragment extends Fragment {
-    private Activity activity;
 
-    public Context getContext(){
-        if(activity == null){
-            return MyApplication.getInstance();
-        }
-        return activity;
-    }
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        activity = getActivity();
-    }
 }

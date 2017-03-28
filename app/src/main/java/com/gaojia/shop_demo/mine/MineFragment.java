@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.gaojia.shop_demo.R;
+import com.gaojia.shop_demo.ec.ECMainActivity;
 import com.gaojia.shop_demo.goodsload.GoodsLoadActivity;
 import com.gaojia.shop_demo.user.UserActivity;
 
@@ -45,7 +46,7 @@ public class MineFragment extends Fragment {
     public void OnClick(View view ){
         switch (view.getId()){
             case R.id.text_service:
-
+                startActivity(new Intent(getContext(), ECMainActivity.class));
                 break;
             case R.id.fragment_mine_goodsload:
                 Intent goodsload = new Intent(getContext(),GoodsLoadActivity.class);
