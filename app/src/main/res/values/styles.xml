@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="take_photo_anim" parent="Animation.AppCompat.DropDownUp">
+        <item name="android:windowEnterAnimation">@anim/popwindow_exit</item>
+        <item name="android:windowExitAnimation">@anim/popwindow_show</item>
+    </style>
 </resources>
