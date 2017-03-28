@@ -11,6 +11,17 @@ public class MyUser extends BmobUser {
     private String nick;
     private Integer age;
     private Integer gold;
+//    private String objectId;
+
+//    @Override
+//    public String getObjectId() {
+//        return objectId;
+//    }
+//
+//    @Override
+//    public void setObjectId(String objectId) {
+//        this.objectId = objectId;
+//    }
 
     public Integer getGold() {
         return gold;

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import com.gaojia.shop_demo.R;
 import com.gaojia.shop_demo.base.BaseFragment;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,9 +22,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobQuery;
+
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.FindListener;
+
 import cn.bmob.v3.listener.SaveListener;
+
+import static android.R.attr.key;
+import static android.R.attr.value;
 
 /**
  * Created by Administrator on 2017/3/14 0014.
@@ -39,10 +46,13 @@ public class RegisterFragment extends BaseFragment {
     Button register;
     @BindView(R.id.fragment_register_recommend_et)
     EditText recommend;
+    @BindView(R.id.fragment_recommend_bt)
+    Button chack;
     String uname;
     String upwd;
     String uemail;
     String urecommend;
+    int commendCheck = 0;
 
 
     @Nullable
@@ -73,38 +83,75 @@ public class RegisterFragment extends BaseFragment {
     }
 
 
-    @OnClick(R.id.fragment_register_bt)
+    @OnClick({R.id.fragment_register_bt,R.id.fragment_recommend_bt})
     public void onClick(View view){
+
         switch (view.getId()){
             case R.id.fragment_register_bt:
+
                 uname = name.getText().toString().trim();
                 upwd = pwd.getText().toString().trim();
                 uemail = email.getText().toString().trim();
                 urecommend = recommend.getText().toString().trim();
-                BmobQuery<MyUser> query = new BmobQuery<>();
-                query.addWhereEqualTo("UserName", urecommend);
                 if(regexUname(uname)==false|| TextUtils.isEmpty(uname)){
                     Toast.makeText(getContext(),"请输入正确的用户名",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(upwd)||regexUpwd(upwd)==false){
                     Toast.makeText(getContext(),"请输入正确的密码",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(uemail)||regexUemail(uemail)==false){
                     Toast.makeText(getContext(),"请输入正确的邮箱地址",Toast.LENGTH_SHORT).show();
-                }else {
+                }else if(commendCheck == 0){
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            BmobUser register = new BmobUser();
+                           MyUser register = new MyUser();
                             register.setUsername(uname);
                             register.setPassword(upwd);
                             register.setEmail(uemail);
+                            register.setGold(50);
 //注意：不能用save方法进行注册
                             register.signUp(new SaveListener<MyUser>() {
                                 @Override
                                 public void done(MyUser s, BmobException e) {
                                     if(e==null){
-                                        Toast.makeText(getContext(),"注册成功",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(),"注册成功",Toast.LENGTH_SHORT).show();
                                     }else{
-                                        Toast.makeText(getContext(),"注册失败",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(),"注册失败",Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                        }
+                    }).start();
+                }else{
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            final MyUser register = new MyUser();
+                            register.setUsername(uname);
+                            register.setPassword(upwd);
+                            register.setEmail(uemail);
+                            register.setGold(100);
+//注意：不能用save方法进行注册
+                            register.signUp(new SaveListener<MyUser>() {
+                                @Override
+                                public void done(MyUser s, BmobException e) {
+                                    if(e==null){
+                                        Toast.makeText(getActivity(),"注册成功",Toast.LENGTH_SHORT).show();
+                                        final String[] a = {};
+                                        final BmobQuery<MyUser> query = new BmobQuery<MyUser>();
+                                        query.addWhereEqualTo("username",urecommend);
+                                        query.findObjects(new FindListener<MyUser>() {
+                                            @Override
+                                            public void done(List<MyUser> list, BmobException e) {
+                                                if (e == null){
+                                                    for (MyUser myUser : list){
+                                                       a[0] = myUser.getObjectId();
+                                                    }
+                                                }
+                                            }
+                                        });
+                                        
+                                    }else{
+                                        Toast.makeText(getActivity(),"注册失败",Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -113,6 +160,22 @@ public class RegisterFragment extends BaseFragment {
                 }
 
                 break;
+
+            case R.id.fragment_recommend_bt:
+                urecommend = recommend.getText().toString().trim();
+                final BmobQuery<MyUser> query = new BmobQuery<>();
+                query.addWhereEqualTo("username",urecommend);
+                query.findObjects(new FindListener<MyUser>() {
+                    @Override
+                    public void done(List<MyUser> list, BmobException e) {
+                        if(list.size()==1){
+                            Toast.makeText(getActivity(),"验证成功",Toast.LENGTH_SHORT).show();
+                            commendCheck =1;
+                        }else {
+                            Toast.makeText(getActivity(),"验证失败,找不到此好友",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
         }
     }
 }
