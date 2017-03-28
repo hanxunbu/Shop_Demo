@@ -92,10 +92,17 @@
             android:layout_marginLeft="10dp"/>
     </LinearLayout>
     <Button
+        android:id="@+id/fragment_recommend_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="验证好友"/>
+
+    <Button
         android:id="@+id/fragment_register_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+
         android:layout_gravity="center_horizontal"
         android:text="注册"/>
 </LinearLayout>
