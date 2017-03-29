@@ -14,12 +14,14 @@
     <!--允许读取手机状态 用于创建BmobInstallation-->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <!--MainActivity-->
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -28,13 +30,10 @@
             </intent-filter>
         </activity>
         <!--GoodsLoadActivity-->
-        <activity android:name=".goodsload.GoodsLoadActivity">
-
-        </activity>
+        <activity android:name=".goodsload.GoodsLoadActivity"></activity>
         <!--UserActivity-->
-        <activity android:name=".user.UserActivity">
+        <activity android:name=".user.UserActivity"></activity>
 
-        </activity>
     </application>
 
 </manifest>

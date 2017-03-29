@@ -1,5 +1,6 @@
 package com.gaojia.shop_demo.user;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,7 +13,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+import com.gaojia.shop_demo.MainActivity;
 import com.gaojia.shop_demo.R;
+import com.gaojia.shop_demo.mine.MineFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,48 +38,6 @@ public class LoginFragment extends Fragment {
             EditText pwd;
     String uname;
     String upwd;
-//    Handler handler = new Handler() {
-//        @Override
-//        public void handleMessage(Message msg) {
-//            super.handleMessage(msg);
-//            if (msg != null) {
-//                switch (msg.what) {
-//                    case App.FAILURE:
-//                        Toast.makeText(getContext(), "请检查网络连接设置", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case App.SUCCEED:
-//                        LoginInfo info = (LoginInfo) msg.obj;
-//                        LoginInfo.LoginData data = info.getData();
-//                        if (info.getData() == null) {
-//                            Toast.makeText(getContext(), "用户名或密码错误", Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            switch (data.getResult()) {
-//                                case 0:
-//                                    Toast.makeText(getContext(), "登录成功", Toast.LENGTH_SHORT).show();
-//                                    Intent intent = new Intent();
-//                                    intent.putExtra("token", data.getToken());
-//                                    intent.putExtra("name", uname);
-//                                    getActivity().setResult(App.RESULTCODE, intent);
-//                                    getActivity().finish();
-//                                    break;
-//                                case -1:
-//                                    Toast.makeText(getContext(), "用户名或密码错误", Toast.LENGTH_SHORT).show();
-//                                    break;
-//                                case -2:
-//                                    Toast.makeText(getContext(), "限制登陆", Toast.LENGTH_SHORT).show();
-//                                    break;
-//                                case -3:
-//                                    Toast.makeText(getContext(), "限制登陆(异地登陆等异常)", Toast.LENGTH_SHORT).show();
-//                                    break;
-//                            }
-//                        }
-//                        break;
-//                }
-//            }
-//        }
-//    };
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -104,11 +65,15 @@ public class LoginFragment extends Fragment {
                                 @Override
                                 public void done(BmobUser bmobUser, BmobException e) {
                                     if(e==null){
-                                        Toast.makeText(getContext(),"登录成功:",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(),"登录成功",Toast.LENGTH_SHORT).show();
                                         //通过BmobUser user = BmobUser.getCurrentUser()获取登录成功后的本地用户信息
                                         //如果是自定义用户对象MyUser，可通过MyUser user = BmobUser.getCurrentUser(MyUser.class)获取自定义用户信息
+                                        Intent showMain = new Intent(getContext(),MainActivity.class);
+                                        startActivity(showMain);
+                                        MineFragment mineFragment = new MineFragment();
+
                                     }else{
-                                        Toast.makeText(getContext(),"登录失败:",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getContext(),"登录失败",Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });

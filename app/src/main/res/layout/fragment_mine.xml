@@ -109,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="233333.33"
+                    android:text="0.00"
                     android:textSize="18sp"/>
                 <TextView
                 android:id="@+id/text_goldbalance"
@@ -128,12 +128,15 @@
                 android:orientation="vertical"
                 android:gravity="center"
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="233333.33"
-                    android:textSize="18sp"/>
+                    android:text="0.00"
+                    android:textSize="18sp"
+                    android:id="@+id/textView" />
+
                 <TextView
                     android:id="@+id/text_balance"
                     android:layout_width="wrap_content"

@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 
 
 import com.gaojia.shop_demo.base.BaseActivity;
+import com.gaojia.shop_demo.base.ShowWhatFragmentListener;
 import com.gaojia.shop_demo.base.TestFragment;
 import com.gaojia.shop_demo.category.CategoryFragment;
 import com.gaojia.shop_demo.find.FindFragment;
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
 
-public class MainActivity extends BaseActivity implements OnTabSelectListener {
+public class MainActivity extends BaseActivity implements OnTabSelectListener,ShowWhatFragmentListener {
     @BindView(R.id.bottom_bar)
     BottomBar mBottomBar;
     private MineFragment mMineFragment;
@@ -131,6 +132,23 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener {
                 }
                 switchfragment(mFindFragment);
                 break;
+        }
+    }
+
+    @Override
+    public void setTargetFragment(String targetFragment) {
+        switch (targetFragment){
+            case "MainFragment":
+                if(mHomeFragment==null){
+                    mHomeFragment = HomeFragment.newInstance();
+                }
+                switchfragment(mHomeFragment);
+                break;
+            case "MineFragment":
+                if(mMineFragment == null){
+                    mMineFragment = MineFragment.newInstance();
+                }
+                switchfragment(mMineFragment);
         }
     }
 }
