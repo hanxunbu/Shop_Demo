@@ -31,10 +31,6 @@ dependencies {
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
     //3.5.0：请务必查看下面注释[1]
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
-    //bmob整合，包含libbmob.so、依赖jar包(okhttp、okio、rx、gson等)及自动更新组件所需要的资源文件
-    compile 'com.squareup.okhttp:okhttp:2.4.0'
-    //CDN文件服务使用okhttp相关包进行文件的上传和下载（必填）
-    compile 'com.squareup.okio:okio:1.4.0'
     // butterknife
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
@@ -42,6 +38,4 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.1.1'
     // 下拉刷新和上拉加载的控件
     compile 'in.srain.cube:ptr-load-more:1.0.2'
-
-
 }

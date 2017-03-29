@@ -52,7 +52,6 @@ public class MineFragment extends Fragment {
     private PhotoPopwindow mPhotoPopwindow;
 
     private String path;//指定文件路径
-
     public static MineFragment newInstance(){
         return new MineFragment();
     }
@@ -69,7 +68,7 @@ public class MineFragment extends Fragment {
     public void OnClick(View view ){
         switch (view.getId()){
             case R.id.text_service:
-
+//                startActivity(new Intent(getContext(), ECMainActivity.class));
                 break;
             case R.id.fragment_mine_goodsload:
                 Intent goodsload = new Intent(getContext(),GoodsLoadActivity.class);
@@ -89,8 +88,7 @@ public class MineFragment extends Fragment {
                     }
                 }
                 break;
-            default:
-                break;
+
         }
     }
 
@@ -106,6 +104,10 @@ public class MineFragment extends Fragment {
         }
         if (requestCode == 3 && resultCode == RESULT_OK) {
             getImageToView(data);
+        }
+    }
+            default:
+                break;
         }
     }
 

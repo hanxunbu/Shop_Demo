@@ -11,8 +11,16 @@ public class GoodsLoad extends BmobObject {
     private String goodsID;
     private Integer goodsprice;
     private String goodsdescribe;
+    private String photoname;
     private BmobFile goodsphoto;
     private String goodstype;
+    public String getPhotoname() {
+        return photoname;
+    }
+
+    public void setPhotoname(String photoname) {
+        this.photoname = photoname;
+    }
 
     public String getGoodstype() {
         return goodstype;

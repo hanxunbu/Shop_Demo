@@ -22,10 +22,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-
-        <!--&lt;!&ndash; 设置环信应用的AppKey &ndash;&gt;-->
-        <!--<meta-data android:name="EASEMOB_APPKEY"  android:value="1103170323178024#shop" />-->
-
         <!--MainActivity-->
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -37,7 +33,6 @@
         <activity android:name=".goodsload.GoodsLoadActivity"></activity>
         <!--UserActivity-->
         <activity android:name=".user.UserActivity"></activity>
-
 
     </application>
 

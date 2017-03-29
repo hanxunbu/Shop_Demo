@@ -6,9 +6,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.gaojia.shop_demo.R;
 
+import java.util.List;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
@@ -17,6 +21,12 @@ import butterknife.ButterKnife;
  */
 
 public class HomeFragment extends Fragment {
+
+    @BindView(R.id.home_lv)
+    ListView lv;
+    private HomeAdapter adapter;
+    private List<GoodsInfo> data;
+    private GoodsDao dao;
     public static HomeFragment newInstance(){
         return new HomeFragment();
     }
@@ -28,4 +38,13 @@ public class HomeFragment extends Fragment {
         ButterKnife.bind(this,view);
         return view;
     }
+
+//    @Override
+//    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+//        super.onActivityCreated(savedInstanceState);
+//        adapter = new HomeAdapter(getContext());
+//        data = dao.select();
+//        adapter.setData(data);
+//        lv.setAdapter(adapter);
+//    }
 }
