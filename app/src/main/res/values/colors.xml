@@ -6,7 +6,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorGray">#D1D1D1</color>
     <color name="colorWhite">#FFFFFF</color>
-
     <!-- 灰度值(grayscale) -->
     <color name="white">#F6F6F6</color>
     <color name="gray_light">#EDE8E8</color>

@@ -88,6 +88,7 @@ public class MineFragment extends Fragment {
                     }
                 }
                 break;
+
         }
     }
 
@@ -103,6 +104,10 @@ public class MineFragment extends Fragment {
         }
         if (requestCode == 3 && resultCode == RESULT_OK) {
             getImageToView(data);
+        }
+    }
+            default:
+                break;
         }
     }
 

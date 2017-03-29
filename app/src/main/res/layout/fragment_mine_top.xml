@@ -13,7 +13,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/ic_menu_settings"/>
-    <ImageView
+    <com.gaojia.shop_demo.base.CircleImageView
         android:id="@+id/image_avatar"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -21,7 +21,6 @@
         android:layout_marginBottom="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
-        android:background="@drawable/image_avatar_bg"
         android:padding="1dp"
         android:src="@drawable/image_default_avatar"/>
     <TextView
