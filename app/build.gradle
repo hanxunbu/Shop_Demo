@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
    
     defaultConfig {
         applicationId "com.gaojia.shop_demo"
         minSdkVersion 19
-        targetSdkVersion 25
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -25,7 +25,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:appcompat-v7:24.1.1'
     testCompile 'junit:junit:4.12'
     //以下SDK开发者请根据需要自行选择
     //bmob-sdk：Bmob的android sdk包，包含了Bmob的数据存储、文件等服务，以下是最新的bmob-sdk:
@@ -38,4 +38,5 @@ dependencies {
     compile 'com.roughike:bottom-bar:2.1.1'
     // 下拉刷新和上拉加载的控件
     compile 'in.srain.cube:ptr-load-more:1.0.2'
+    compile project(':easeui')
 }

@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.gaojia.shop_demo.R;
 import com.gaojia.shop_demo.base.PhotoPopwindow;
+import com.gaojia.shop_demo.ec.ECloginActivity;
 import com.gaojia.shop_demo.goodsload.GoodsLoadActivity;
 import com.gaojia.shop_demo.user.UserActivity;
 
@@ -68,7 +69,7 @@ public class MineFragment extends Fragment {
     public void OnClick(View view ){
         switch (view.getId()){
             case R.id.text_service:
-//                startActivity(new Intent(getContext(), ECMainActivity.class));
+                startActivity(new Intent(getContext(), ECloginActivity.class));
                 break;
             case R.id.fragment_mine_goodsload:
                 Intent goodsload = new Intent(getContext(),GoodsLoadActivity.class);
@@ -106,10 +107,7 @@ public class MineFragment extends Fragment {
             getImageToView(data);
         }
     }
-            default:
-                break;
-        }
-    }
+
 
     //固定设置一个指定的文件用来保存图片
     public Uri getPath() {
