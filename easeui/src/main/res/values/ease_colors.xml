@@ -4,6 +4,7 @@
     <color name="common_top_bar_blue">#4ebcd3</color>
     <color name="btn_login_normal">#00acff</color>
     <color name="btn_login_pressed">#46678d</color>
+    <color name="colorRed">#f41c1c</color>
     <color name="btn_logout_normal">#d33f3f</color>
     <color name="btn_logout_pressed">#DA5A4D</color>
     <color name="btn_register_normal">#ffffff</color>

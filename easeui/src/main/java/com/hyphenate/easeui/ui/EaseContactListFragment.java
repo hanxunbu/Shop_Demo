@@ -13,11 +13,15 @@
  */
 package com.hyphenate.easeui.ui;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -29,6 +33,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -73,6 +78,7 @@ public class EaseContactListFragment extends EaseBaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.ease_fragment_contact_list, container, false);
+
     }
 
     @Override
@@ -81,18 +87,31 @@ public class EaseContactListFragment extends EaseBaseFragment {
         if(savedInstanceState != null && savedInstanceState.getBoolean("isConflict", false))
             return;
         super.onActivityCreated(savedInstanceState);
+
     }
 
     @Override
     protected void initView() {
+        titleBar.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    if (view.getId() == R.id.right_image) {
+                        //跳转到 添加好友的页面
+                        addFriend();
+                    }
+
+            }
+        });
         contentContainer = (FrameLayout) getView().findViewById(R.id.content_container);
-        
-        contactListLayout = (EaseContactList) getView().findViewById(R.id.contact_list);        
+        contactListLayout = (EaseContactList) getView().findViewById(R.id.contact_list);
         listView = contactListLayout.getListView();
         
         //search
         query = (EditText) getView().findViewById(R.id.query);
         clearSearch = (ImageButton) getView().findViewById(R.id.search_clear);
+
+
     }
 
     @Override
@@ -334,5 +353,83 @@ public class EaseContactListFragment extends EaseBaseFragment {
     public void setContactListItemClickListener(EaseContactListItemClickListener listItemClickListener){
         this.listItemClickListener = listItemClickListener;
     }
-    
+
+    /**
+     * 移除好友
+     */
+    private void removeFriend() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("删除好友");
+        final EditText newFirendName = new EditText(getActivity());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        newFirendName.setLayoutParams(layoutParams);
+        newFirendName.setHint("要删除的好友名");
+        builder.setView(newFirendName);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("移除", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                new Thread() {
+                    @Override
+                    public void run() {
+                        String firendName = newFirendName.getText().toString().trim();
+                        try {
+                            EMClient.getInstance().contactManager().deleteContact(firendName);
+                        } catch (HyphenateException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    /**
+     * 添加好友
+     */
+    private void addFriend() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("添加好友");
+        final EditText newFirendName = new EditText(getActivity());
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        newFirendName.setLayoutParams(layoutParams);
+        newFirendName.setHint("新好友用户名");
+        builder.setView(newFirendName);
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setPositiveButton("添加", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                new Thread() {
+                    @Override
+                    public void run() {
+                        String firendName = newFirendName.getText().toString().trim();
+                        try {
+                            EMClient.getInstance().contactManager().addContact(firendName, "我是你的朋友");
+                            Toast.makeText(getContext(), "添加好友成功,等待回应:", Toast.LENGTH_SHORT).show();
+
+                        } catch (HyphenateException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }.start();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+
 }

@@ -80,6 +80,10 @@
         "source": "F:\\Shop_Demo\\easeui\\src\\main\\res\\drawable-xhdpi\\ease_default_avatar.png"
     },
     {
+        "merged": "F:\\Shop_Demo\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ic_person_add_black_40dp.png",
+        "source": "F:\\Shop_Demo\\easeui\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_person_add_black_40dp.png"
+    },
+    {
         "merged": "F:\\Shop_Demo\\easeui\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\ease_delete_expression.png",
         "source": "F:\\Shop_Demo\\easeui\\src\\main\\res\\drawable-xhdpi\\ease_delete_expression.png"
     },

@@ -13,9 +13,12 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
+
             <include layout="@layout/fragment_mine_top"/>
+
             <include layout="@layout/fragment_mine_top_login"
                 android:visibility="invisible"/>
+
         </FrameLayout>
         //我的订单/店铺关注/待评价/在线客服
         <LinearLayout
@@ -33,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_order_wait_pay"
+                    android:drawableTop="@drawable/ic_mine_shop"
                     android:padding="4dp"
                     android:text="商品关注"
                     android:textSize="14sp"
@@ -49,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_order_wait_pay"
+                    android:drawableTop="@drawable/ic_mine_shops"
                     android:padding="4dp"
                     android:text="店主关注"
                     android:textSize="14sp"
@@ -65,7 +68,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_order_history"
+                    android:drawableTop="@drawable/ic_mine_pingjia"
                     android:padding="4dp"
                     android:text="待评价"
                     android:textSize="14sp"
@@ -81,7 +84,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_order_wait_pay"
+                    android:drawableTop="@drawable/ic_mine_mm"
                     android:padding="4dp"
                     android:text="在线客服"
                     android:textSize="14sp"
@@ -159,8 +162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawableTop="@drawable/ic_order_wait_pay"
-
+                    android:drawableTop="@drawable/ic_mine_moneys"
                     android:padding="4dp"
                     android:text="钱包"
                     android:textSize="14sp"
@@ -177,7 +179,6 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorWhite">
             <TextView
-
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"

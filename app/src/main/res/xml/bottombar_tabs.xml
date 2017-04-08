@@ -5,15 +5,20 @@
         icon="@drawable/ic_tab_home"
         title="@string/main_home"/>
     <tab
-        id="@+id/tab_category"
-        icon="@drawable/ic_tab_category"
-        title="@string/main_category" />
+        id="@+id/tab_addressbooks"
+        icon="@drawable/ic_tab_addressbook"
+        title="@string/main_addressbook" />
     <tab
-        id="@+id/tab_find"
-        icon="@drawable/ic_tab_find"
-        title="@string/main_find" />
+        id="@+id/tab_friend"
+        icon="@drawable/ic_tab_friend"
+        title="@string/main_friend" />
     <tab
         id="@+id/tab_mine"
         icon="@drawable/ic_tab_mine"
         title="@string/main_mine" />
+    <tab
+        id="@+id/tab_king"
+        icon="@drawable/ic_tab_king"
+        title="@string/main_king"
+        />
 </tabs>

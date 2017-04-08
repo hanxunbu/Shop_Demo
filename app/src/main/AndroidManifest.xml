@@ -55,7 +55,9 @@
         //        环信
         <activity android:name=".ec.ECChatActivity"></activity>
         <activity android:name=".ec.ECloginActivity"></activity>
-        <activity android:name=".ec.ECMainActivity"></activity>
+        <activity android:name=".ec.RegistActivity"></activity>
+
+        <activity android:name=".set.SetActivity"></activity>
 
 
         <!-- 设置环信应用的AppKey -->

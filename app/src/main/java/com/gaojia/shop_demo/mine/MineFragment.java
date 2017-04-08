@@ -16,6 +16,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,7 +26,10 @@ import com.gaojia.shop_demo.R;
 import com.gaojia.shop_demo.base.PhotoPopwindow;
 import com.gaojia.shop_demo.ec.ECloginActivity;
 import com.gaojia.shop_demo.goodsload.GoodsLoadActivity;
+import com.gaojia.shop_demo.set.SetActivity;
 import com.gaojia.shop_demo.user.UserActivity;
+import com.hyphenate.easeui.ui.EaseConversationListFragment;
+import com.hyphenate.easeui.widget.EaseContactList;
 
 import java.io.File;
 
@@ -49,6 +53,8 @@ public class MineFragment extends Fragment {
     TextView lar;
     @BindView(R.id.image_avatar)
     ImageView mImg;
+    @BindView(R.id.button_setting)
+    ImageButton mSet;
 
     private PhotoPopwindow mPhotoPopwindow;
 
@@ -65,18 +71,18 @@ public class MineFragment extends Fragment {
         return view;
 
     }
-    @OnClick({R.id.text_service,R.id.fragment_mine_goodsload,R.id.text_username,R.id.image_avatar})
+    @OnClick({R.id.text_service,R.id.fragment_mine_goodsload,R.id.text_username,R.id.image_avatar,R.id.button_setting})
     public void OnClick(View view ){
         switch (view.getId()){
             case R.id.text_service:
-                startActivity(new Intent(getContext(), ECloginActivity.class));
+                startActivity(new Intent(getContext(), EaseConversationListFragment.class));
                 break;
             case R.id.fragment_mine_goodsload:
                 Intent goodsload = new Intent(getContext(),GoodsLoadActivity.class);
                 startActivity(goodsload);
                 break;
             case R.id.text_username:
-                Intent LoginAndRegister = new Intent(getContext(),UserActivity.class);
+                Intent LoginAndRegister = new Intent(getContext(),ECloginActivity.class);
                 startActivity(LoginAndRegister);
                 break;
             case R.id.image_avatar:
@@ -88,6 +94,11 @@ public class MineFragment extends Fragment {
                         mPhotoPopwindow.dismiss();
                     }
                 }
+                break;
+            case R.id.button_setting:
+                startActivity(new Intent(getContext(), SetActivity.class));
+                break;
+            default:
                 break;
 
         }

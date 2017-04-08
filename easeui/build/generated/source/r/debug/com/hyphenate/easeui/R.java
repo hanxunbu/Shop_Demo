@@ -297,28 +297,29 @@ containing a value of this type.
         public static int btn_register_pressed=0x7f080012;
         public static int btn_white_normal=0x7f080013;
         public static int btn_white_pressed=0x7f080014;
-        public static int common_bg=0x7f080015;
-        public static int common_bottom_bar_normal_bg=0x7f080016;
-        public static int common_bottom_bar_selected_bg=0x7f080017;
-        public static int common_botton_bar_blue=0x7f080018;
-        public static int common_top_bar_blue=0x7f080019;
-        public static int divider_list=0x7f08001a;
-        public static int emojicon_tab_nomal=0x7f08001b;
-        public static int emojicon_tab_selected=0x7f08001c;
-        public static int error_item_color=0x7f08001d;
-        public static int gray_normal=0x7f08001e;
-        public static int gray_pressed=0x7f08001f;
-        public static int grid_state_focused=0x7f080020;
-        public static int grid_state_pressed=0x7f080021;
-        public static int holo_blue_bright=0x7f080022;
-        public static int holo_green_light=0x7f080023;
-        public static int holo_orange_light=0x7f080024;
-        public static int holo_red_light=0x7f080025;
-        public static int list_itease_primary_color=0x7f080026;
-        public static int list_itease_secondary_color=0x7f080027;
-        public static int orange=0x7f080028;
-        public static int top_bar_normal_bg=0x7f080029;
-        public static int voip_interface_text_color=0x7f08002a;
+        public static int colorRed=0x7f080015;
+        public static int common_bg=0x7f080016;
+        public static int common_bottom_bar_normal_bg=0x7f080017;
+        public static int common_bottom_bar_selected_bg=0x7f080018;
+        public static int common_botton_bar_blue=0x7f080019;
+        public static int common_top_bar_blue=0x7f08001a;
+        public static int divider_list=0x7f08001b;
+        public static int emojicon_tab_nomal=0x7f08001c;
+        public static int emojicon_tab_selected=0x7f08001d;
+        public static int error_item_color=0x7f08001e;
+        public static int gray_normal=0x7f08001f;
+        public static int gray_pressed=0x7f080020;
+        public static int grid_state_focused=0x7f080021;
+        public static int grid_state_pressed=0x7f080022;
+        public static int holo_blue_bright=0x7f080023;
+        public static int holo_green_light=0x7f080024;
+        public static int holo_orange_light=0x7f080025;
+        public static int holo_red_light=0x7f080026;
+        public static int list_itease_primary_color=0x7f080027;
+        public static int list_itease_secondary_color=0x7f080028;
+        public static int orange=0x7f080029;
+        public static int top_bar_normal_bg=0x7f08002a;
+        public static int voip_interface_text_color=0x7f08002b;
     }
     public static final class dimen {
         public static int activity_horizontal_margin=0x7f050002;
@@ -507,6 +508,7 @@ containing a value of this type.
         public static int ee_8=0x7f0200a4;
         public static int ee_9=0x7f0200a5;
         public static int ic_launcher=0x7f0200a6;
+        public static int ic_person_add_black_40dp=0x7f0200a7;
     }
     public static final class id {
         public static int alert_message=0x7f09000d;
