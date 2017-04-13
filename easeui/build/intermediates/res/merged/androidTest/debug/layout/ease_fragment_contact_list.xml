@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/common_bg"
     android:orientation="vertical">
-
     <com.hyphenate.easeui.widget.EaseTitleBar
         android:id="@+id/title_bar"
         android:layout_width="match_parent"
@@ -16,6 +15,7 @@
     <include
         android:id="@+id/search_bar_view"
         layout="@layout/ease_search_bar_with_padding" />
+
 
     <FrameLayout
         android:id="@+id/content_container"
@@ -29,5 +29,6 @@
             <!-- hyphenate:ctsListInitialLetterBg="#abc" -->
 
     </FrameLayout>
+
 
 </LinearLayout>

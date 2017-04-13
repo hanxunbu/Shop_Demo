@@ -9,7 +9,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/colorRed"
         android:title="上传商品"
         app:titleTextColor="@color/colorWhite">
         <TextView

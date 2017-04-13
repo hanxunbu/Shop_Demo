@@ -13,15 +13,16 @@
  */
 package com.hyphenate.easeui.ui;
 
+
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
+
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -33,6 +34,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -66,8 +68,7 @@ public class EaseContactListFragment extends EaseBaseFragment {
     protected ImageButton clearSearch;
     protected EditText query;
     protected Handler handler = new Handler();
-    protected EaseUser toBeProcessUser;
-    protected String toBeProcessUsername;
+
     protected EaseContactList contactListLayout;
     protected boolean isConflict;
     protected FrameLayout contentContainer;
@@ -92,17 +93,13 @@ public class EaseContactListFragment extends EaseBaseFragment {
 
     @Override
     protected void initView() {
-        titleBar.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
+      titleBar.getRightLayout().setOnClickListener(new OnClickListener() {
+          @Override
+          public void onClick(View v) {
+             addFriend();
+          }
+      });
 
-                    if (view.getId() == R.id.right_image) {
-                        //跳转到 添加好友的页面
-                        addFriend();
-                    }
-
-            }
-        });
         contentContainer = (FrameLayout) getView().findViewById(R.id.content_container);
         contactListLayout = (EaseContactList) getView().findViewById(R.id.contact_list);
         listView = contactListLayout.getListView();

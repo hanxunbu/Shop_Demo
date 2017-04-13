@@ -27,9 +27,7 @@ import com.gaojia.shop_demo.base.PhotoPopwindow;
 import com.gaojia.shop_demo.ec.ECloginActivity;
 import com.gaojia.shop_demo.goodsload.GoodsLoadActivity;
 import com.gaojia.shop_demo.set.SetActivity;
-import com.gaojia.shop_demo.user.UserActivity;
 import com.hyphenate.easeui.ui.EaseConversationListFragment;
-import com.hyphenate.easeui.widget.EaseContactList;
 
 import java.io.File;
 

@@ -1,5 +1,6 @@
 package com.gaojia.shop_demo.ec;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -13,6 +14,7 @@ import com.hyphenate.easeui.ui.EaseChatFragment;
  * Created by Administrator on 2017/3/30.
  */
 public class ECChatActivity extends BaseActivity {
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

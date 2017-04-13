@@ -8,6 +8,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import com.gaojia.shop_demo.base.MyConnectionListener;
 import com.gaojia.shop_demo.ec.ECChatActivity;
+import com.gaojia.shop_demo.ec.PersonFragment;
+import com.gaojia.shop_demo.ec.PersonFragment_ViewBinding;
 import com.gaojia.shop_demo.runtimepermissions.PermissionsManager;
 import com.gaojia.shop_demo.runtimepermissions.PermissionsResultAction;
 import com.gaojia.shop_demo.vip.VIPFragment;
@@ -44,13 +46,15 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener,Sh
     private MineFragment mMineFragment;
     //主页面
     private HomeFragment mHomeFragment;
-    //通讯录
-    private EaseConversationListFragment conversationListFragment;
     //好友列表
+    private EaseConversationListFragment conversationListFragment;
+    //通讯录
     private static EaseContactListFragment contactListFragment;
     private static EMMessageListener emMessageListener;
     private Fragment mCurrentFragment;
     private VIPFragment mVipFragment;
+    private static PersonFragment personFragment;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,6 +187,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener,Sh
             }
         });
 
+        personFragment = new PersonFragment();
         contactListFragment = new EaseContactListFragment();
         new Thread() {//需要在子线程中调用
             @Override
@@ -218,6 +223,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener,Sh
         mMineFragment = (MineFragment) manager.findFragmentByTag(MineFragment.class.getName());
         mHomeFragment = (HomeFragment) manager.findFragmentByTag(HomeFragment.class.getName());
         mVipFragment = (VIPFragment) manager.findFragmentByTag(VIPFragment.class.getName());
+        personFragment = (PersonFragment) manager.findFragmentByTag(PersonFragment.class.getName());
     }
 
     private void switchfragment(Fragment target) {
@@ -283,7 +289,7 @@ public class MainActivity extends BaseActivity implements OnTabSelectListener,Sh
                 break;
             case R.id.tab_king:
                 if(mVipFragment == null){
-                    mVipFragment = VIPFragment.newInstance();
+                    mVipFragment = new VIPFragment();
                 }
                 switchfragment(mVipFragment);
                 break;

@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:background="@color/common_bg"
     android:orientation="vertical">
+    <com.hyphenate.easeui.widget.EaseTitleBar
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        hyphenate:titleBarTitle="@string/address_book"
+        hyphenate:titleBarRightImage="@drawable/ic_person_add_black_40dp"/>
+
+    <include
+        android:id="@+id/search_bar_view"
+        layout="@layout/ease_search_bar_with_padding" />
+
 
     <FrameLayout
         android:id="@+id/content_container"
@@ -19,15 +30,5 @@
 
     </FrameLayout>
 
-    <com.hyphenate.easeui.widget.EaseTitleBar
-        android:id="@+id/title_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        hyphenate:titleBarTitle="@string/address_book"
-        hyphenate:titleBarRightImage="@drawable/ic_person_add_black_40dp"/>
-
-    <include
-        android:id="@+id/search_bar_view"
-        layout="@layout/ease_search_bar_with_padding" />
 
 </LinearLayout>

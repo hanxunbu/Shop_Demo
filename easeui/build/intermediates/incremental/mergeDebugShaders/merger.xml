@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="F:\Shop_Demo\easeui\src\main\shaders"/></dataSet><dataSet config="debug"><source path="F:\Shop_Demo\easeui\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\Shop_Demo\easeui\src\main\shaders"/></dataSet><dataSet config="debug"><source path="D:\Shop_Demo\easeui\src\debug\shaders"/></dataSet></merger>

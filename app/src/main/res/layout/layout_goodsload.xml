@@ -75,7 +75,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="@color/colorPrimary"
+            android:background="@color/colorRed"
             android:text="类型选择"
             android:textColor="@color/colorWhite"
             android:textSize="20sp"

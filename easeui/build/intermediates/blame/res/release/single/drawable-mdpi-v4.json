@@ -6,5 +6,13 @@
     {
         "merged": "F:\\Shop_Demo\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "F:\\Shop_Demo\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Shop_Demo\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "D:\\Shop_Demo\\easeui\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Shop_Demo\\easeui\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\ic_person_add_black_40dp.png",
+        "source": "D:\\Shop_Demo\\easeui\\build\\generated\\res\\pngs\\release\\drawable-mdpi\\ic_person_add_black_40dp.png"
     }
 ]
